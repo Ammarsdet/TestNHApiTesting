@@ -1,0 +1,22 @@
+{
+  "id": 111236,
+  "category": {
+    "id": 737,
+    "name": "cat"
+  },
+  "name": "Amber",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 15,
+      "name": "persian"
+    },
+        {
+      "id": 13,
+      "name": "Anatolian"
+    }
+  ],
+  "status": "available"
+}

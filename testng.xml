@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Ecomm-regression" parallel="methods" thread-count="2">
+	<test name="loginRegression">
+		<classes>
+			<class name="tests.SignupTests"></class>
+		</classes>
+	</test>
+</suite>
