@@ -6,8 +6,8 @@
       <class name="test.PetStoreApiTest">
         <methods>
           <include name="cleanup"/>
-          <include name="createCatWithJsonFile"/>
           <include name="setup"/>
+          <include name="chainValidation"/>
         </methods>
       </class> <!-- test.PetStoreApiTest -->
     </classes>
