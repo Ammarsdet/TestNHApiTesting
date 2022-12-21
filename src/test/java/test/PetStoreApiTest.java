@@ -3,6 +3,7 @@ package test;
 
 import java.io.File;
 
+import static org.hamcrest.Matchers.*;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -157,10 +158,13 @@ public class PetStoreApiTest {
 	
 		catResponse.then().statusCode(200).and().contentType("application/json");
 		Assert.assertEquals(catResponse.jsonPath().get("status"), "pending");
-		
-		
+				
 		
 	}
+	
+	//RestAssured chain validation 
+	
+	
 	
 	@Test
 	public void postAPet(){
@@ -241,14 +245,42 @@ public class PetStoreApiTest {
     		myResponse.prettyPrint();
     		
     		catId = myResponse.jsonPath().get("id");
-     		
-     		
+     		    		
      	}
+     	
+     	@Test
+    	public void chainValidation(){
+    		
+     		File catRequestBodyFile = new File("./src/test/resources/JsonTestData/postCat.json");
+    		
+    		Response myResponse = 
+    				RestAssured
+    				.given().accept(ContentType.JSON).contentType("application/json")
+    				.body(catRequestBodyFile)
+    				.when().post("/pet");
+    		
+    		myResponse.then().assertThat().statusCode(200)
+    		.and().assertThat().contentType("application/json")
+    		.and().assertThat().body("id", equalTo(111236))
+    		.and().assertThat().body("category.id", equalTo(737))
+    		.and().assertThat().body("category.name", equalTo("cat"))
+    		.and().assertThat().body("name", equalTo("Amber"))
+    		.and().assertThat().body("tags[0].id", equalTo(15))
+    		.and().assertThat().body("tags[0].name", equalTo("persian"))
+    		.and().assertThat().body("tags[1].id", equalTo(13))
+    		.and().assertThat().body("tags[1].name", equalTo("Anatolian"))
+    		.and().assertThat().body("status", equalTo("available"));
+    		
+    		myResponse.prettyPrint();
+    		
+    		catId = myResponse.jsonPath().get("id");
+    	}
+     	
 	
 	@AfterTest
 	public void cleanup() {
 		deleteCat();
-		//deleteAPet();
+		deleteAPet();
 		
 	}
 	

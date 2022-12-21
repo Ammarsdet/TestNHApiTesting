@@ -13,9 +13,9 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11">
 		<attributes>
-			<attribute name="module" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry exported="true" kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
@@ -30,5 +30,11 @@
 	<classpathentry exported="true" kind="lib" path="/Applications/Tools/selenium-java-3/libs/okio-1.14.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="/Applications/Tools/selenium-java-3/client-combined-3.141.59-sources.jar" sourcepath="/Applications/Tools/selenium-java-3/client-combined-3.141.59-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="/Applications/Tools/selenium-java-3/client-combined-3.141.59.jar" sourcepath="/Applications/Tools/selenium-java-3/client-combined-3.141.59-sources.jar"/>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
